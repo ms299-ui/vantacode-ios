@@ -1,0 +1,36 @@
+name: ios
+
+on:
+  push:
+    paths:
+      - "ios/**"
+      - ".github/workflows/ios.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install xcodegen
+        run: brew install xcodegen
+      - name: Generate Xcode project
+        run: cd ios && xcodegen generate
+      - name: Build (unsigned)
+        run: |
+          cd ios
+          xcodebuild -project VantaCode.xcodeproj -scheme VantaCode \
+            -sdk iphoneos -configuration Release \
+            -archivePath build/VantaCode.xcarchive archive \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
+      - name: Package ipa
+        run: |
+          cd ios
+          mkdir -p build/Payload
+          cp -R build/VantaCode.xcarchive/Products/Applications/VantaCode.app build/Payload/
+          cd build && zip -qry VantaCode-unsigned.ipa Payload
+          ls -lh VantaCode-unsigned.ipa
+      - uses: actions/upload-artifact@v4
+        with:
+          name: VantaCode-ipa
+          path: ios/build/VantaCode-unsigned.ipa
