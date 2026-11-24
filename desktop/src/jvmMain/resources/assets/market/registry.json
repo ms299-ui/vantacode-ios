@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-20",
+  "skills": [
+    {
+      "name": "anthropics/skills",
+      "displayName": "Anthropic 官方技能集",
+      "description": "Anthropic 官方示例技能仓库，包含文档、数据与办公场景的可复用 SKILL.md。",
+      "author": "anthropics",
+      "stars": 3200,
+      "tags": ["official", "document", "office"],
+      "downloadUrl": "https://github.com/anthropics/skills/archive/refs/heads/main.zip",
+      "category": "skill",
+      "version": "1.0.0"
+    }
+  ]
+}

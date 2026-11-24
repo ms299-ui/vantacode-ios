@@ -1,0 +1,32 @@
+[
+  {
+    "name": "dsh-coding-workflow",
+    "displayName": "DSH 编程工作流",
+    "version": "1.0.0",
+    "description": "需求→计划→实施三阶段编程工作流，约束 LLM 按规划推进任务。",
+    "author": "dpwgc",
+    "tags": [
+      "DSH",
+      "编程",
+      "工作流"
+    ],
+    "skillCount": 1,
+    "toolCount": 0,
+    "mcpCount": 0
+  },
+  {
+    "name": "dsh-plugin-developer",
+    "displayName": "DSH 插件开发",
+    "version": "1.0.0",
+    "description": "指导 AI 从 0 到 1 开发、构建、安装、测试 DSH 插件。",
+    "author": "liangdabiao",
+    "tags": [
+      "DSH",
+      "开发",
+      "插件"
+    ],
+    "skillCount": 1,
+    "toolCount": 0,
+    "mcpCount": 0
+  }
+]
